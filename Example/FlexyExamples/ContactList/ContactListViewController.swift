@@ -26,8 +26,7 @@ class ContactListViewController: UIViewController{
             
             self?.show(contactItemViewController, sender: nil)
         }))
-        self.delegateHandler?.addListener(self)
-        tableController.tableViewDelegate = delegateHandler as! UITableViewDelegate
+        tableController.addTableDelegate(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {

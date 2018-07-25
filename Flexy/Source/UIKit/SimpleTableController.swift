@@ -11,7 +11,7 @@ import UIKit
 
 public class SimpleTableController: AbstractController, UITableViewDelegate, UITableViewDataSource {
     private weak var tableView: UITableView?
-    public weak var tableViewDelegate: UITableViewDelegate?
+    public weak var universalDelegateHandler: UniversalDelegateHandler?
     public override var itemModels: [ItemModel] {
         didSet {
             tableView?.reloadData()
@@ -28,7 +28,13 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
         self.tableView?.dataSource = self
     }
     
-        
+    public func addTableDelegate(_ delegate:NSObjectProtocol){
+        universalDelegateHandler?.addListener(delegate)
+    }
+    
+    public func removeTableDelegate(_ delegate:NSObjectProtocol){
+        universalDelegateHandler?.removeListener(delegate)
+    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemModels.count
@@ -40,15 +46,15 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didClickOnItem(on: Flexy.Index(section: indexPath.section, item: indexPath.row))
-        
-        tableViewDelegate?.tableView?(tableView, didSelectRowAt: indexPath)
     }
+    
+    
     
     public override func responds(to selector: Selector!) -> Bool {
         let haveSelector = super.responds(to: selector)
         
         if !haveSelector,
-            let delegate = tableViewDelegate {
+            let delegate = universalDelegateHandler {
             return delegate.responds(to: selector)
         }
         return haveSelector
