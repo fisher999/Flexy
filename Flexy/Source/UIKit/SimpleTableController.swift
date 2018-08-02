@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 public class SimpleTableController: AbstractController, UITableViewDelegate, UITableViewDataSource {
     private weak var tableView: UITableView?
     public weak var universalDelegateHandler: UniversalDelegateHandler?
@@ -46,7 +47,10 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didClickOnItem(on: Flexy.Index(section: indexPath.section, item: indexPath.row))
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
     
     
     

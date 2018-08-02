@@ -22,6 +22,7 @@
 
 @implementation UniversalDelegateHandler
 
+
 + (UniversalDelegateHandler *)handlerForProtocol:(Protocol *)aProtocol {
     UniversalDelegateHandler *instance = [UniversalDelegateHandler alloc];
     instance.theProtocol = aProtocol;
@@ -30,6 +31,8 @@
     instance.lockObject = [NSObject new];
     return instance;
 }
+
+
 
 - (void)addListener:(id <NSObject>)listener thread:(NSThread *)thread {
     @synchronized (self.lockObject) {
@@ -73,9 +76,6 @@
     }
 }
 
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return [self methodSignatureForSelector:aSelector] != nil;
-}
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
     [invocation retainArguments];

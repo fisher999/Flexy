@@ -9,7 +9,23 @@
 import UIKit
 import Flexy
 
+
+public class ConstRowHeightDelegate:UIViewController,UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+}
+
+class ManualRowHeightDelegate:UIViewController,UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as! ContactTableViewCell
+        let size:CGSize = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        return size.height+1
+    }
+}
+
 class ContactListViewController: UIViewController{
+    
     @IBOutlet private var tableView: UITableView!
     
     private lazy var delegateHandler = UniversalDelegateHandler(for: UITableViewDelegate.self )
@@ -26,8 +42,14 @@ class ContactListViewController: UIViewController{
             
             self?.show(contactItemViewController, sender: nil)
         }))
-        tableController.addTableDelegate(self)
+        let delegate = ConstRowHeightDelegate()
+        tableController.universalDelegateHandler = delegateHandler
+        tableController.addTableDelegate(delegate)
+        
+        
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,14 +66,30 @@ class ContactListViewController: UIViewController{
             ContactItemModel(photo: UIImage(named: "avatar3")!, name: "Christopher"),
         ]
     }
-    
+
+   
 }
 
-extension ContactListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
