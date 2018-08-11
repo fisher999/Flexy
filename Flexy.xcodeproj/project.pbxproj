@@ -21,12 +21,14 @@
 		54F3BA41204CEDCA00E4BC45 /* Flexy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA40204CEDCA00E4BC45 /* Flexy.swift */; };
 		54F3BA43204CEE4900E4BC45 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA42204CEE4900E4BC45 /* Index.swift */; };
 		54F3BA46204D036500E4BC45 /* SimpleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA45204D036400E4BC45 /* SimpleTableController.swift */; };
-		774223B420EA035B001A5A34 /* NSThread+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223AE20EA035A001A5A34 /* NSThread+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		774223B620EA035B001A5A34 /* UniversalDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223B020EA035B001A5A34 /* UniversalDelegateHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		774223B720EA035B001A5A34 /* UniversalDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 774223B120EA035B001A5A34 /* UniversalDelegateHandler.m */; };
-		774223B820EA035B001A5A34 /* NSPointerArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223B220EA035B001A5A34 /* NSPointerArray+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77385DA3211439CF00F6A780 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA2211439CF00F6A780 /* CollectionCell.swift */; };
+		77385DA521143F4700F6A780 /* CollectionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA421143F4700F6A780 /* CollectionCellController.swift */; };
+		77385DA8211456AC00F6A780 /* TableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA7211456AC00F6A780 /* TableCollectionController.swift */; };
 		774223BB20EA04AC001A5A34 /* Flexy.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223BA20EA04AC001A5A34 /* Flexy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7775DE8620DE7FCF00C50D3F /* TableView+CellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7775DE8520DE7FCF00C50D3F /* TableView+CellProvider.swift */; };
+		77C1941C211600BE002A275D /* CollectionView+CellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C1941B211600BE002A275D /* CollectionView+CellProvider.swift */; };
+		77DBD1E3211DD24F00D89BA5 /* MultiDelegatesProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DBD1E1211DD24F00D89BA5 /* MultiDelegatesProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77DBD1E4211DD24F00D89BA5 /* MultiDelegatesProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBD1E2211DD24F00D89BA5 /* MultiDelegatesProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +59,14 @@
 		54F3BA40204CEDCA00E4BC45 /* Flexy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flexy.swift; sourceTree = "<group>"; };
 		54F3BA42204CEE4900E4BC45 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		54F3BA45204D036400E4BC45 /* SimpleTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableController.swift; sourceTree = "<group>"; };
-		774223AE20EA035A001A5A34 /* NSThread+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+Extensions.h"; sourceTree = "<group>"; };
-		774223B020EA035B001A5A34 /* UniversalDelegateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalDelegateHandler.h; sourceTree = "<group>"; };
-		774223B120EA035B001A5A34 /* UniversalDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalDelegateHandler.m; sourceTree = "<group>"; };
-		774223B220EA035B001A5A34 /* NSPointerArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPointerArray+Extensions.h"; sourceTree = "<group>"; };
+		77385DA2211439CF00F6A780 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		77385DA421143F4700F6A780 /* CollectionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellController.swift; sourceTree = "<group>"; };
+		77385DA7211456AC00F6A780 /* TableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionController.swift; sourceTree = "<group>"; };
 		774223BA20EA04AC001A5A34 /* Flexy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flexy.h; sourceTree = "<group>"; };
 		7775DE8520DE7FCF00C50D3F /* TableView+CellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+CellProvider.swift"; sourceTree = "<group>"; };
+		77C1941B211600BE002A275D /* CollectionView+CellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+CellProvider.swift"; sourceTree = "<group>"; };
+		77DBD1E1211DD24F00D89BA5 /* MultiDelegatesProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiDelegatesProxy.h; sourceTree = "<group>"; };
+		77DBD1E2211DD24F00D89BA5 /* MultiDelegatesProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiDelegatesProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,19 +171,29 @@
 		54F3BA44204D034C00E4BC45 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				77385DA621143F5500F6A780 /* CollectionCell */,
 				7775DE8520DE7FCF00C50D3F /* TableView+CellProvider.swift */,
 				54F3BA45204D036400E4BC45 /* SimpleTableController.swift */,
+				77385DA7211456AC00F6A780 /* TableCollectionController.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		77385DA621143F5500F6A780 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				77385DA421143F4700F6A780 /* CollectionCellController.swift */,
+				77385DA2211439CF00F6A780 /* CollectionCell.swift */,
+				77C1941B211600BE002A275D /* CollectionView+CellProvider.swift */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 		774223AD20EA0327001A5A34 /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
-				774223B220EA035B001A5A34 /* NSPointerArray+Extensions.h */,
-				774223AE20EA035A001A5A34 /* NSThread+Extensions.h */,
-				774223B020EA035B001A5A34 /* UniversalDelegateHandler.h */,
-				774223B120EA035B001A5A34 /* UniversalDelegateHandler.m */,
+				77DBD1E1211DD24F00D89BA5 /* MultiDelegatesProxy.h */,
+				77DBD1E2211DD24F00D89BA5 /* MultiDelegatesProxy.m */,
 				774223BA20EA04AC001A5A34 /* Flexy.h */,
 			);
 			path = Proxy;
@@ -192,10 +206,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774223B820EA035B001A5A34 /* NSPointerArray+Extensions.h in Headers */,
-				774223B620EA035B001A5A34 /* UniversalDelegateHandler.h in Headers */,
+				77DBD1E3211DD24F00D89BA5 /* MultiDelegatesProxy.h in Headers */,
 				774223BB20EA04AC001A5A34 /* Flexy.h in Headers */,
-				774223B420EA035B001A5A34 /* NSThread+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,15 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774223B720EA035B001A5A34 /* UniversalDelegateHandler.m in Sources */,
+				77385DA8211456AC00F6A780 /* TableCollectionController.swift in Sources */,
 				1FF5C4312049CB1300AE00FB /* _ViewBinder.swift in Sources */,
+				77385DA3211439CF00F6A780 /* CollectionCell.swift in Sources */,
 				1FF5C4262049BD5200AE00FB /* CellProvider.swift in Sources */,
 				1FF5C42D2049C23E00AE00FB /* TextError.swift in Sources */,
 				1FF5C4242049BD3600AE00FB /* ItemModel.swift in Sources */,
 				7775DE8620DE7FCF00C50D3F /* TableView+CellProvider.swift in Sources */,
 				1FF5C4222049BD0500AE00FB /* ViewBinder.swift in Sources */,
 				54F3BA43204CEE4900E4BC45 /* Index.swift in Sources */,
+				77385DA521143F4700F6A780 /* CollectionCellController.swift in Sources */,
+				77C1941C211600BE002A275D /* CollectionView+CellProvider.swift in Sources */,
 				54F3BA46204D036500E4BC45 /* SimpleTableController.swift in Sources */,
+				77DBD1E4211DD24F00D89BA5 /* MultiDelegatesProxy.m in Sources */,
 				54F3BA3F204CED1B00E4BC45 /* View.swift in Sources */,
 				54F3BA41204CEDCA00E4BC45 /* Flexy.swift in Sources */,
 				1FF5C4282049BD8A00AE00FB /* AbstractController.swift in Sources */,

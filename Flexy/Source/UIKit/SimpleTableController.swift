@@ -9,32 +9,45 @@
 import UIKit
 
 
-
 public class SimpleTableController: AbstractController, UITableViewDelegate, UITableViewDataSource {
+    
     private weak var tableView: UITableView?
-    public weak var universalDelegateHandler: UniversalDelegateHandler?
+    public var universalDelegateHandler: MultiDelegatesProxy?
+    public var universalDataSourceHandler: MultiDelegatesProxy?
     public override var itemModels: [ItemModel] {
         didSet {
             tableView?.reloadData()
         }
     }
     
-    public init(tableView: UITableView) {
+    public init(tableView: UITableView,withDataSource dataSourceArray:[Any]) {
         super.init()
-        
         self.tableView = tableView
         self.cellProvider = tableView
-        
+        universalDataSourceHandler = MultiDelegatesProxy.newProxy(withMainDelegate: self, other: dataSourceArray)
         self.tableView?.delegate = self
+        self.tableView?.dataSource = universalDataSourceHandler as? UITableViewDataSource
+
+    }
+    
+    public init (tableView: UITableView, withTableViewDelegate delegateArray:[Any]) {
+        super.init()
+        self.tableView = tableView
+        self.cellProvider = tableView
+        universalDelegateHandler = MultiDelegatesProxy.newProxy(withMainDelegate: self, other: delegateArray)
+        self.tableView?.delegate = universalDelegateHandler as? UITableViewDelegate
         self.tableView?.dataSource = self
     }
     
-    public func addTableDelegate(_ delegate:NSObjectProtocol){
-        universalDelegateHandler?.addListener(delegate)
-    }
-    
-    public func removeTableDelegate(_ delegate:NSObjectProtocol){
-        universalDelegateHandler?.removeListener(delegate)
+    public init (tableView: UITableView, withTableViewDelegate delegateArray:[Any], dataSourceArray:[Any]) {
+        super.init()
+        self.tableView = tableView
+        self.cellProvider = tableView
+        universalDelegateHandler = MultiDelegatesProxy.newProxy(withMainDelegate: self, other: delegateArray)
+        universalDataSourceHandler = MultiDelegatesProxy.newProxy(withMainDelegate: self, other: dataSourceArray)
+        self.tableView?.delegate = universalDelegateHandler as? UITableViewDelegate
+        self.tableView?.dataSource = universalDataSourceHandler as? UITableViewDataSource
+        
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +55,7 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return reuseCell(for: Flexy.Index(section: indexPath.section, item: indexPath.row), from: tableView)
+        return reuseCell(for: Flexy.Index(section: indexPath.section, item: indexPath.row), from: tableView) 
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -52,15 +65,4 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
     
     
     
-    
-    
-    public override func responds(to selector: Selector!) -> Bool {
-        let haveSelector = super.responds(to: selector)
-        
-        if !haveSelector,
-            let delegate = universalDelegateHandler {
-            return delegate.responds(to: selector)
-        }
-        return haveSelector
-    }
 }

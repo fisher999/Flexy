@@ -1,36 +1,19 @@
 //
-//  ViewController.swift
+//  ContactCollectionViewController.swift
 //  FlexyExamples
 //
-//  Created by Anisov Aleksey on 3/5/18.
+//  Created by Виктор on 04/08/2018.
 //  Copyright © 2018 Flexy. All rights reserved.
 //
 
 import UIKit
-import Flexy
 
+class ContactCollectionCellController: UIViewController {
 
-public class ConstRowHeightDelegate:UIViewController,UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-}
-
-class ManualRowHeightDelegate:UIViewController,UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as! ContactTableViewCell
-        let size:CGSize = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        return size.height+1
-    }
-}
-
-class ContactListViewController: UIViewController{
-    
     @IBOutlet private var tableView: UITableView!
     
-    private lazy var delegateHandler = UniversalDelegateHandler(for: UITableViewDelegate.self )
-    private lazy var tableController = SimpleTableController(tableView: tableView)
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableController.register(binder: ContactViewBinder({[weak self] item in
@@ -45,7 +28,6 @@ class ContactListViewController: UIViewController{
         let delegate = ConstRowHeightDelegate()
         tableController.universalDelegateHandler = delegateHandler
         tableController.addTableDelegate(delegate)
-        
         
     }
     
@@ -67,29 +49,6 @@ class ContactListViewController: UIViewController{
         ]
     }
 
-   
+    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

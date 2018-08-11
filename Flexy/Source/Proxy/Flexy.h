@@ -7,6 +7,4 @@
 //
 
 
-#import "NSPointerArray+Extensions.h"
-#import "NSThread+Extensions.h"
-#import "UniversalDelegateHandler.h"
+#import "MultiDelegatesProxy.h"

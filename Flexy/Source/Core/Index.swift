@@ -10,5 +10,12 @@ extension Flexy {
     public struct Index {
         let section: Int
         let item: Int
+        public init(section:Int,item:Int) {
+            self.section = section
+            self.item = item
+        }
     }
+    
+   
+    
 }
