@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import Flexy
 
 
 class DataSource:UIViewController {
     
-    var itemModels = [
+    var itemModels:[Any] = [
+        HeaderItemModel(title:"Голова"),
         ContactItemModel(photo: UIImage(named: "avatar1")!, name: "Marie"),
         ContactItemModel(photo: UIImage(named: "avatar3")!, name: "Benjamin"),
         ContactItemModel(photo: UIImage(named: "avatar1")!, name: "Sofia"),
@@ -22,9 +24,10 @@ class DataSource:UIViewController {
         ContactItemModel(photo: UIImage(named: "avatar3")!, name: "Brian"),
         ContactItemModel(photo: UIImage(named: "avatar2")!, name: "Corwin"),
         ContactItemModel(photo: UIImage(named: "avatar3")!, name: "Christopher"),
+        ContactItemModel(photo: UIImage(named: "avatar3")!, name: "Christopher"),
         ]
     
-    func getData() -> [ContactItemModel]{
+    func getData() -> [Any]{
         return itemModels
     }
     

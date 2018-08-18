@@ -21,7 +21,10 @@
 		54F3BA41204CEDCA00E4BC45 /* Flexy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA40204CEDCA00E4BC45 /* Flexy.swift */; };
 		54F3BA43204CEE4900E4BC45 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA42204CEE4900E4BC45 /* Index.swift */; };
 		54F3BA46204D036500E4BC45 /* SimpleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA45204D036400E4BC45 /* SimpleTableController.swift */; };
-		77385DA3211439CF00F6A780 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA2211439CF00F6A780 /* CollectionCell.swift */; };
+		77148AD121259D4300BA066B /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD021259D4300BA066B /* CellConfiguration.swift */; };
+		77148AD32125A8EF00BA066B /* ItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD22125A8EF00BA066B /* ItemSize.swift */; };
+		77148AD52125A9E200BA066B /* ItemSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD42125A9E200BA066B /* ItemSpacing.swift */; };
+		7723773C21245C8F008F7950 /* CollectionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723773B21245C8F008F7950 /* CollectionBinder.swift */; };
 		77385DA521143F4700F6A780 /* CollectionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA421143F4700F6A780 /* CollectionCellController.swift */; };
 		77385DA8211456AC00F6A780 /* TableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA7211456AC00F6A780 /* TableCollectionController.swift */; };
 		774223BB20EA04AC001A5A34 /* Flexy.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223BA20EA04AC001A5A34 /* Flexy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,7 +62,10 @@
 		54F3BA40204CEDCA00E4BC45 /* Flexy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flexy.swift; sourceTree = "<group>"; };
 		54F3BA42204CEE4900E4BC45 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		54F3BA45204D036400E4BC45 /* SimpleTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableController.swift; sourceTree = "<group>"; };
-		77385DA2211439CF00F6A780 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		77148AD021259D4300BA066B /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
+		77148AD22125A8EF00BA066B /* ItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSize.swift; sourceTree = "<group>"; };
+		77148AD42125A9E200BA066B /* ItemSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSpacing.swift; sourceTree = "<group>"; };
+		7723773B21245C8F008F7950 /* CollectionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBinder.swift; sourceTree = "<group>"; };
 		77385DA421143F4700F6A780 /* CollectionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellController.swift; sourceTree = "<group>"; };
 		77385DA7211456AC00F6A780 /* TableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionController.swift; sourceTree = "<group>"; };
 		774223BA20EA04AC001A5A34 /* Flexy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flexy.h; sourceTree = "<group>"; };
@@ -183,8 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				77385DA421143F4700F6A780 /* CollectionCellController.swift */,
-				77385DA2211439CF00F6A780 /* CollectionCell.swift */,
 				77C1941B211600BE002A275D /* CollectionView+CellProvider.swift */,
+				7723773B21245C8F008F7950 /* CollectionBinder.swift */,
+				77148AD021259D4300BA066B /* CellConfiguration.swift */,
+				77148AD22125A8EF00BA066B /* ItemSize.swift */,
+				77148AD42125A9E200BA066B /* ItemSpacing.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -314,12 +323,15 @@
 			files = (
 				77385DA8211456AC00F6A780 /* TableCollectionController.swift in Sources */,
 				1FF5C4312049CB1300AE00FB /* _ViewBinder.swift in Sources */,
-				77385DA3211439CF00F6A780 /* CollectionCell.swift in Sources */,
 				1FF5C4262049BD5200AE00FB /* CellProvider.swift in Sources */,
 				1FF5C42D2049C23E00AE00FB /* TextError.swift in Sources */,
 				1FF5C4242049BD3600AE00FB /* ItemModel.swift in Sources */,
 				7775DE8620DE7FCF00C50D3F /* TableView+CellProvider.swift in Sources */,
+				77148AD121259D4300BA066B /* CellConfiguration.swift in Sources */,
+				77148AD52125A9E200BA066B /* ItemSpacing.swift in Sources */,
+				7723773C21245C8F008F7950 /* CollectionBinder.swift in Sources */,
 				1FF5C4222049BD0500AE00FB /* ViewBinder.swift in Sources */,
+				77148AD32125A8EF00BA066B /* ItemSize.swift in Sources */,
 				54F3BA43204CEE4900E4BC45 /* Index.swift in Sources */,
 				77385DA521143F4700F6A780 /* CollectionCellController.swift in Sources */,
 				77C1941C211600BE002A275D /* CollectionView+CellProvider.swift in Sources */,

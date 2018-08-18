@@ -18,6 +18,13 @@
 		54F3BA8B204D088500E4BC45 /* ContactItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA8A204D088500E4BC45 /* ContactItemModel.swift */; };
 		54F3BA8D204D08DD00E4BC45 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA8C204D08DD00E4BC45 /* ContactTableViewCell.swift */; };
 		54F3BA92204D501900E4BC45 /* ContactItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3BA91204D501900E4BC45 /* ContactItemViewController.swift */; };
+		7718A05B2121D7C000AE4630 /* ContactTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7718A05A2121D7C000AE4630 /* ContactTableCell.swift */; };
+		772096C421207290004B2F44 /* CollectionViewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772096C321207290004B2F44 /* CollectionViewBinder.swift */; };
+		772096C6212072C7004B2F44 /* CollectionCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772096C5212072C7004B2F44 /* CollectionCellClass.swift */; };
+		773C4E4E2126E134004C919D /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C4E4D2126E134004C919D /* HeaderCell.swift */; };
+		773C4E512126E516004C919D /* HeaderCellBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C4E502126E516004C919D /* HeaderCellBinder.swift */; };
+		773C4E5321270EF1004C919D /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C4E5221270EF1004C919D /* HeaderItemModel.swift */; };
+		773C4E56212722DD004C919D /* ContactCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C4E55212722DD004C919D /* ContactCollectionController.swift */; };
 		77DB97D5211F165A00C60CD6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DB97D4211F165A00C60CD6 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +79,13 @@
 		54F3BA8A204D088500E4BC45 /* ContactItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemModel.swift; sourceTree = "<group>"; };
 		54F3BA8C204D08DD00E4BC45 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		54F3BA91204D501900E4BC45 /* ContactItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemViewController.swift; sourceTree = "<group>"; };
+		7718A05A2121D7C000AE4630 /* ContactTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableCell.swift; sourceTree = "<group>"; };
+		772096C321207290004B2F44 /* CollectionViewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewBinder.swift; sourceTree = "<group>"; };
+		772096C5212072C7004B2F44 /* CollectionCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellClass.swift; sourceTree = "<group>"; };
+		773C4E4D2126E134004C919D /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		773C4E502126E516004C919D /* HeaderCellBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellBinder.swift; sourceTree = "<group>"; };
+		773C4E5221270EF1004C919D /* HeaderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemModel.swift; sourceTree = "<group>"; };
+		773C4E55212722DD004C919D /* ContactCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionController.swift; sourceTree = "<group>"; };
 		77DB97D4211F165A00C60CD6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +121,10 @@
 		54F3BA54204D05D700E4BC45 /* FlexyExamples */ = {
 			isa = PBXGroup;
 			children = (
+				772096BE21206F43004B2F44 /* TableCollectionExample */,
 				77523F812115BB790009D0FC /* SimpleTableExample */,
 				54F3BA55204D05D700E4BC45 /* AppDelegate.swift */,
+				54F3BA8A204D088500E4BC45 /* ContactItemModel.swift */,
 				54F3BA59204D05D700E4BC45 /* Main.storyboard */,
 				54F3BA5C204D05D700E4BC45 /* Assets.xcassets */,
 				54F3BA5E204D05D700E4BC45 /* LaunchScreen.storyboard */,
@@ -131,7 +147,6 @@
 			children = (
 				54F3BA8C204D08DD00E4BC45 /* ContactTableViewCell.swift */,
 				54F3BA88204D087500E4BC45 /* ContactViewBinder.swift */,
-				54F3BA8A204D088500E4BC45 /* ContactItemModel.swift */,
 			);
 			path = ContactCell;
 			sourceTree = "<group>";
@@ -152,6 +167,20 @@
 				54F3BA91204D501900E4BC45 /* ContactItemViewController.swift */,
 			);
 			path = ContactItem;
+			sourceTree = "<group>";
+		};
+		772096BE21206F43004B2F44 /* TableCollectionExample */ = {
+			isa = PBXGroup;
+			children = (
+				772096C321207290004B2F44 /* CollectionViewBinder.swift */,
+				772096C5212072C7004B2F44 /* CollectionCellClass.swift */,
+				7718A05A2121D7C000AE4630 /* ContactTableCell.swift */,
+				773C4E4D2126E134004C919D /* HeaderCell.swift */,
+				773C4E502126E516004C919D /* HeaderCellBinder.swift */,
+				773C4E5221270EF1004C919D /* HeaderItemModel.swift */,
+				773C4E55212722DD004C919D /* ContactCollectionController.swift */,
+			);
+			path = TableCollectionExample;
 			sourceTree = "<group>";
 		};
 		77523F812115BB790009D0FC /* SimpleTableExample */ = {
@@ -263,8 +292,15 @@
 			files = (
 				77DB97D5211F165A00C60CD6 /* DataSource.swift in Sources */,
 				54F3BA58204D05D700E4BC45 /* ContactListViewController.swift in Sources */,
+				773C4E512126E516004C919D /* HeaderCellBinder.swift in Sources */,
+				772096C6212072C7004B2F44 /* CollectionCellClass.swift in Sources */,
+				773C4E4E2126E134004C919D /* HeaderCell.swift in Sources */,
+				772096C421207290004B2F44 /* CollectionViewBinder.swift in Sources */,
+				773C4E56212722DD004C919D /* ContactCollectionController.swift in Sources */,
+				773C4E5321270EF1004C919D /* HeaderItemModel.swift in Sources */,
 				54F3BA8D204D08DD00E4BC45 /* ContactTableViewCell.swift in Sources */,
 				54F3BA8B204D088500E4BC45 /* ContactItemModel.swift in Sources */,
+				7718A05B2121D7C000AE4630 /* ContactTableCell.swift in Sources */,
 				54F3BA89204D087500E4BC45 /* ContactViewBinder.swift in Sources */,
 				54F3BA92204D501900E4BC45 /* ContactItemViewController.swift in Sources */,
 				54F3BA56204D05D700E4BC45 /* AppDelegate.swift in Sources */,

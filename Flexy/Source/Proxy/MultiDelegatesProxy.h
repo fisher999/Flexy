@@ -16,6 +16,6 @@
 @property (nonatomic,weak)	id			 mainDelegate;
 
 + (id) newProxyWithMainDelegate:(id) aMainDelegate other:(NSArray *) aDelegates;
-
+- (void) addDelegate:(id) delegate;
 
 @end

@@ -42,14 +42,10 @@
 - (BOOL)respondsToSelector:(SEL)aSelector {
 	if ([self.mainDelegate respondsToSelector:aSelector])
 		return YES;
+    
     for (id delegateObj in self.delegatesPointerArray.allObjects)
         if ([delegateObj respondsToSelector:aSelector])//{
-            /*SEL sel = NSSelectorFromString(@"tableView:cellForRowAtIndexPath:");
-            if (sel == aSelector) {
-                return NO;
-            }
-        }
-            else*/
+            
                 return YES;
     return NO;
 }
@@ -68,9 +64,9 @@
 		targetInvocation = [NSInvocation invocationWithMethodSignature:invocation.methodSignature];
 		[targetInvocation setSelector:invocation.selector];
 	}
-	SEL sel = NSSelectorFromString(@"tableView:cellForRowAtIndexPath:");
+	
 	for (id delegateObj in self.delegatesPointerArray.allObjects) {
-		if ([delegateObj respondsToSelector:invocation.selector] && invocation.selector != sel)
+		if ([delegateObj respondsToSelector:invocation.selector])
 			[targetInvocation invokeWithTarget:delegateObj];
     }
 }
@@ -87,7 +83,14 @@
 }
 
 - (void)addDelegate:(id) delegate {
+    for (id existingDelegate in self.delegatesPointerArray) {
+        if (existingDelegate == delegate) {
+            return;
+        }
+    }
     
+    [self.delegatesPointerArray addPointer:(__bridge void *) delegate];
+    [self.delegatesPointerArray compact];
 }
 
 

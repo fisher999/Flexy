@@ -16,6 +16,7 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
     public var universalDataSourceHandler: MultiDelegatesProxy?
     public override var itemModels: [ItemModel] {
         didSet {
+            
             tableView?.reloadData()
         }
     }
@@ -54,7 +55,7 @@ public class SimpleTableController: AbstractController, UITableViewDelegate, UIT
         return itemModels.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return reuseCell(for: Flexy.Index(section: indexPath.section, item: indexPath.row), from: tableView) 
     }
     

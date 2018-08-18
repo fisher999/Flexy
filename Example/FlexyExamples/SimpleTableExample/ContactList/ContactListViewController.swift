@@ -63,7 +63,7 @@ class ContactListViewController: UIViewController,UITableViewDataSource{
         super.viewDidAppear(animated)
         let appDelegate = AppDelegate()
         self.dataSource = appDelegate.dataSource
-        tableController.itemModels = self.dataSource.getData()
+        tableController.itemModels = self.dataSource.getData() as! [ItemModel]
     }
 
 

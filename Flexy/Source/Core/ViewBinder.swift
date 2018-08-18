@@ -19,6 +19,8 @@ public protocol ViewBinder {
     var cellIdentifier: String { get }
     
     var shouldRegisterCells: Bool { get }
+    
+    
 }
 
 extension ViewBinder {
@@ -37,4 +39,6 @@ extension ViewBinder {
     public var shouldRegisterCells: Bool {
         return false
     }
+    
+    
 }
