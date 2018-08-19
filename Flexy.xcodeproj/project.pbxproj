@@ -24,7 +24,6 @@
 		77148AD121259D4300BA066B /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD021259D4300BA066B /* CellConfiguration.swift */; };
 		77148AD32125A8EF00BA066B /* ItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD22125A8EF00BA066B /* ItemSize.swift */; };
 		77148AD52125A9E200BA066B /* ItemSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77148AD42125A9E200BA066B /* ItemSpacing.swift */; };
-		7723773C21245C8F008F7950 /* CollectionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723773B21245C8F008F7950 /* CollectionBinder.swift */; };
 		77385DA521143F4700F6A780 /* CollectionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA421143F4700F6A780 /* CollectionCellController.swift */; };
 		77385DA8211456AC00F6A780 /* TableCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77385DA7211456AC00F6A780 /* TableCollectionController.swift */; };
 		774223BB20EA04AC001A5A34 /* Flexy.h in Headers */ = {isa = PBXBuildFile; fileRef = 774223BA20EA04AC001A5A34 /* Flexy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,7 +64,6 @@
 		77148AD021259D4300BA066B /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		77148AD22125A8EF00BA066B /* ItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSize.swift; sourceTree = "<group>"; };
 		77148AD42125A9E200BA066B /* ItemSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSpacing.swift; sourceTree = "<group>"; };
-		7723773B21245C8F008F7950 /* CollectionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBinder.swift; sourceTree = "<group>"; };
 		77385DA421143F4700F6A780 /* CollectionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellController.swift; sourceTree = "<group>"; };
 		77385DA7211456AC00F6A780 /* TableCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionController.swift; sourceTree = "<group>"; };
 		774223BA20EA04AC001A5A34 /* Flexy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flexy.h; sourceTree = "<group>"; };
@@ -177,10 +175,8 @@
 		54F3BA44204D034C00E4BC45 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				77385DA621143F5500F6A780 /* CollectionCell */,
-				7775DE8520DE7FCF00C50D3F /* TableView+CellProvider.swift */,
-				54F3BA45204D036400E4BC45 /* SimpleTableController.swift */,
-				77385DA7211456AC00F6A780 /* TableCollectionController.swift */,
+				77B57A952129BB4800D0D8FF /* TableCollectionController */,
+				77B57A942129BB3500D0D8FF /* SimpleTableController */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -188,9 +184,8 @@
 		77385DA621143F5500F6A780 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				77385DA421143F4700F6A780 /* CollectionCellController.swift */,
 				77C1941B211600BE002A275D /* CollectionView+CellProvider.swift */,
-				7723773B21245C8F008F7950 /* CollectionBinder.swift */,
+				77385DA421143F4700F6A780 /* CollectionCellController.swift */,
 				77148AD021259D4300BA066B /* CellConfiguration.swift */,
 				77148AD22125A8EF00BA066B /* ItemSize.swift */,
 				77148AD42125A9E200BA066B /* ItemSpacing.swift */,
@@ -206,6 +201,24 @@
 				774223BA20EA04AC001A5A34 /* Flexy.h */,
 			);
 			path = Proxy;
+			sourceTree = "<group>";
+		};
+		77B57A942129BB3500D0D8FF /* SimpleTableController */ = {
+			isa = PBXGroup;
+			children = (
+				7775DE8520DE7FCF00C50D3F /* TableView+CellProvider.swift */,
+				54F3BA45204D036400E4BC45 /* SimpleTableController.swift */,
+			);
+			path = SimpleTableController;
+			sourceTree = "<group>";
+		};
+		77B57A952129BB4800D0D8FF /* TableCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				77385DA7211456AC00F6A780 /* TableCollectionController.swift */,
+				77385DA621143F5500F6A780 /* CollectionCell */,
+			);
+			path = TableCollectionController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +342,6 @@
 				7775DE8620DE7FCF00C50D3F /* TableView+CellProvider.swift in Sources */,
 				77148AD121259D4300BA066B /* CellConfiguration.swift in Sources */,
 				77148AD52125A9E200BA066B /* ItemSpacing.swift in Sources */,
-				7723773C21245C8F008F7950 /* CollectionBinder.swift in Sources */,
 				1FF5C4222049BD0500AE00FB /* ViewBinder.swift in Sources */,
 				77148AD32125A8EF00BA066B /* ItemSize.swift in Sources */,
 				54F3BA43204CEE4900E4BC45 /* Index.swift in Sources */,

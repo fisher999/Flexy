@@ -8,15 +8,24 @@
 
 import UIKit
 
+#if DEVELOPMENT
+    let storyBoardInitId = "CarCollectionController"
+#else
+    let storyBoardInitId = "ContactListViewController"
+    #endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var contactListViewController:ContactListViewController?
-    var dataSource = DataSource()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: storyBoardInitId) as UIViewController
+        navigationController.viewControllers = [rootViewController]
+        self.window?.rootViewController = navigationController
+        return true
         return true
     }
 

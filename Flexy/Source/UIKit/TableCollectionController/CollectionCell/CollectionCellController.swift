@@ -11,21 +11,32 @@ import UIKit
 public class CollectionCellController: AbstractController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     public weak var collectionView:UICollectionView?
-    var columns:Int!
-    var itemSpacing:ItemSpacing!
-    var cellSize: CGSize!
-    
+    var cellConfig:CellConfiguration!
+    var width:CGFloat!
+    var height:CGFloat!
     public var universalDelegateHandler:MultiDelegatesProxy!
-    public init(collectionView:UICollectionView,with delegateArray:[Any],cellSize:CGSize,columns:Int,itemSpacing:ItemSpacing){
+    
+    
+    public init(collectionView:UICollectionView,with delegateArray:[Any],cellConfig:CellConfiguration){
         super.init()
         self.collectionView = collectionView
         self.cellProvider = collectionView
         universalDelegateHandler = MultiDelegatesProxy.newProxy(withMainDelegate: self, other: delegateArray)
         self.collectionView?.delegate = universalDelegateHandler as? UICollectionViewDelegate
         self.collectionView?.dataSource = self
-        self.cellSize = cellSize
-        self.columns = columns
-        self.itemSpacing = itemSpacing
+        self.cellConfig = cellConfig
+        if !cellConfig.scrollable {
+            collectionView.isScrollEnabled = false
+        }
+        else {
+            collectionView.isScrollEnabled = true
+        }
+        let layout = collectionView.collectionViewLayout as!UICollectionViewFlowLayout
+        layout.minimumInteritemSpacing = cellConfig.itemSpacing.minInteritemSpacing
+        layout.minimumLineSpacing = cellConfig.itemSpacing.minLineSpacing
+        collectionView.collectionViewLayout = layout
+        self.width = (self.collectionView?.frame.width)!/CGFloat(self.cellConfig.columns) - cellConfig.itemSpacing.minInteritemSpacing
+        self.height = (self.cellConfig.cellSize.height)
     }
     
     public override var itemModels: [ItemModel] {
@@ -40,13 +51,11 @@ public class CollectionCellController: AbstractController,UICollectionViewDelega
     
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(itemModels.count)
         return itemModels.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return reuseCell(for: Flexy.Index(section: indexPath.section, item: indexPath.row), from: cellProvider! )
-
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -55,7 +64,7 @@ public class CollectionCellController: AbstractController,UICollectionViewDelega
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.collectionView?.frame.width)! / CGFloat(self.columns)   , height: self.cellSize.height)
+        return CGSize(width: self.width   , height: self.height)
     }
     
     

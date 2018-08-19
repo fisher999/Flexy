@@ -9,18 +9,19 @@
 import Flexy
 
 class CollectionViewBinder: ViewBinder {
-    private let clickHandler: ((ContactItemModel) -> ())?
+    private let clickHandler: ((CarItemModel) -> ())?
+    private var itemModels:[ItemModel]!
     
-    init(_ handler: ((ContactItemModel) -> ())? = nil) {
+    init(_ handler: ((CarItemModel) -> ())? = nil) {
         clickHandler = handler
     }
     
-    func bind(model: ContactItemModel, to cell: CollectionCellClass) {
-        cell.contactNameLabel.text = model.name
-        cell.contactPhotoImageView.image = model.photo
+    func bind(model: CarItemModel, to cell: CollectionCellClass) {
+        cell.priceLabel.text = model.price
+        cell.carPhotoImageView.image = model.photo
     }
     
-    func onItemSelect(item: ContactItemModel) {
+    func onItemSelect(item: CarItemModel) {
         clickHandler?(item)
     }
     

@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-public class ItemSpacing {
-    var minInteritemSpacing:CGFloat!
-    var minLineSpacing:CGFloat!
-    init(minInteritemSpacing:CGFloat,minLineSpacing:CGFloat) {
+public struct ItemSpacing {
+    public var minInteritemSpacing:CGFloat!
+    public var minLineSpacing:CGFloat!
+    public init(minInteritemSpacing:CGFloat,minLineSpacing:CGFloat) {
         self.minInteritemSpacing = minInteritemSpacing
         self.minLineSpacing = minLineSpacing
     }

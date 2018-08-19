@@ -32,7 +32,7 @@ open class AbstractController: NSObject {
         viewBinders[key] = binderWrapper
     }
     
-    public func register<VB: ViewBinder>(binder: VB) {
+    public final func register<VB: ViewBinder>(binder: VB) {
         do {
             return try _register(binder: binder)
         } catch let error {
@@ -40,7 +40,8 @@ open class AbstractController: NSObject {
         }
     }
     
-    public final func reuseCell<CellType: Flexy.View>(for index: Flexy.Index, from cellProvider: CellProvider) -> CellType {
+    public  func reuseCell<CellType: Flexy.View>(for index: Flexy.Index, from cellProvider: CellProvider) -> CellType {
+        
         let model = itemModels[index.item]
         guard let viewBinder = self.viewBinders[model.itemId] else {
             fatalError("Can't find ViewBinder for key '\(model.itemId)'")
